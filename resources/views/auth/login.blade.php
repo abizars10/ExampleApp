@@ -36,6 +36,14 @@
                         class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
                         in</button>
                 </div>
+
+                <div>
+                    <div class="flex items-center justify-center text-sm">
+                        <label for="password" class="block font-medium text-gray-900 text-sm/6">Don't have an account? <a href="/register" class="font-semibold text-indigo-600 hover:text-indigo-500">Sign Up
+                        </a>
+                        </label>
+                    </div>
+                </div>
             </form>
             {{-- Menmapilkan Pesan Error --}}
             @if ($errors->any())
