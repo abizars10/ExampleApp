@@ -12,7 +12,12 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: [
+                    "InterVariable",
+                    ...defaultTheme.fontFamily.sans,
+                    "Figtree",
+                    ...defaultTheme.fontFamily.sans,
+                ],
             },
         },
     },
