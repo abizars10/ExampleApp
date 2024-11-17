@@ -14,16 +14,22 @@ Route::get('/landing', function () {
 
 Route::get('/register', function () {
     return view('auth.register');
-})->middleware(RedirectIfAuthenticated::class)->name('register');
+})
+    ->middleware(RedirectIfAuthenticated::class)
+    ->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/login', function () {
     return view('auth.login');
-})->middleware(RedirectIfAuthenticated::class)->name('login');
+})
+    ->middleware(RedirectIfAuthenticated::class)
+    ->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/logut', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('auth')->name('dashboard');
+})
+    ->middleware('auth')
+    ->name('dashboard');

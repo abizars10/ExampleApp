@@ -168,6 +168,10 @@
             <main>
                 <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <!-- Your content -->
+                    {{-- Menampilkan name dari akun yang sudah login --}}
+                   @auth
+                       {{ Auth::user()->name }}
+                   @endauth
                 </div>
             </main>
         </div>
