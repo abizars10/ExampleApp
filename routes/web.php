@@ -29,7 +29,12 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logut', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', ['title' => 'Dashboard']);
 })
     ->middleware('auth')
     ->name('dashboard');
+Route::get('/team', function () {
+    return view('team', ['title' => 'Team']);
+})
+    ->middleware('auth')
+    ->name('team');
