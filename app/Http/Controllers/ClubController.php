@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Club;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClubController extends Controller
 {
@@ -13,7 +14,7 @@ class ClubController extends Controller
     public function index()
     {
         $clubs = Club::all();
-        return view('club', ['title' => 'Clubs'], compact('clubs'));
+        return view('club', ['title' => 'Clubs', 'clubs' => $clubs]);
     }
 
     /**
@@ -21,7 +22,7 @@ class ClubController extends Controller
      */
     public function create()
     {
-        //
+        return view('clubs.create', ['title' => 'New Club']);
     }
 
     /**
@@ -29,7 +30,32 @@ class ClubController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:20',
+            'city' => 'required|max:20',
+            'stadium' => 'required|max:20',
+        ],[
+            'name.required' => 'Nama wajib diisi',
+            'name.max' => 'Nama maksimal 20 karakter',
+            'city.required' => 'Kota wajib diisi',
+            'city.max' => 'Kota maksimal 20 karakter',
+            'stadium.required' => 'Stadion wajib diisi',
+            'stadium.max' => 'Stadion maksimal 20 karakter',
+        ]);
+
+        // DB::table('clubs')->insert([
+        //     'name'=>$request->name,
+        //     'city'=>$request->city,
+        //     'stadium'=>$request->stadium,
+        // ]);
+
+        $club = new Club();
+        $club->name = $request->name;
+        $club->city = $request->city;
+        $club->stadium = $request->stadium;
+        $club->save();
+
+        return redirect()->route('club.index')->with('success', 'Club added successfully!');
     }
 
     /**

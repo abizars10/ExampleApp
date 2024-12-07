@@ -27,5 +27,7 @@ Route::post('/logut', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function (){
     Route::get('dashboard', function(){return view('dashboard', ['title' => 'Dashboard']);})->name('dashboard');
     Route::get('team', function(){return view('team', ['title' => 'Team']);})->name('team');
-    Route::get('club', [ClubController::class, 'index'])->name('club');
+    Route::get('club', [ClubController::class, 'index'])->name('club.index');
+    Route::get('/clubs/create', [ClubController::class, 'create'])->name('club.create');
+    Route::post('/clubs/create', [ClubController::class, 'store'])->name('club.store');
 });
