@@ -23,7 +23,11 @@
                         <td class="flex justify-center gap-2 px-1 border border-slate-700">
                             <a href="team" class="text-green-700"><i class='bx bx-show'></i></a>
                             <a href="{{ route('club.edit', $club->id) }}" class="text-blue-700"><i class='bx bxs-pencil'></i></i></a>
-                            <a href="#" class="text-red-700"><i class='bx bxs-trash'></i></a>
+                            <form action="{{ route('club.destroy', $club->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-red-700"><i class='bx bxs-trash'></i></button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

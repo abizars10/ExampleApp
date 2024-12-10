@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use id;
 use App\Models\Club;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -98,8 +99,9 @@ class ClubController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Club $id)
     {
-        //
+        $id->delete();
+        return redirect()->route('club.index')->with('success', 'Data berhasil di hapus.');
     }
 }

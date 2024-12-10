@@ -32,4 +32,5 @@ Route::middleware('auth')->group(function (){
     Route::post('/clubs/create', [ClubController::class, 'store'])->name('club.store');
     Route::get('/clubs/edit{id}', [ClubController::class, 'edit'])->name('club.edit');
     Route::put('/clubs/update{id}', [ClubController::class, 'update'])->name('club.update');
+    Route::delete('/clubs/delete{id}', [ClubController::class, 'destroy'])->name('club.destroy');
 });
