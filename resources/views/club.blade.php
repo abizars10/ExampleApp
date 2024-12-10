@@ -1,10 +1,11 @@
 <x-layout>
     <x-navbar></x-navbar>
     <x-header>{{ $title }}</x-header>
-    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="px-4 py-6 pb-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <a href="{{ route('club.create') }}"
-            class="flex w-40 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-2">Create Club</a>
-        <table class="w-full border border-separate border-slate-500">
+            class="flex w-40 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-2">Create
+            Club</a>
+        <table class="w-full mb-1 border border-separate border-slate-500">
             <thead>
                 <tr>
                     <th class="border border-slate-600">Nama Club</th>
@@ -28,5 +29,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $clubs->links() }}
     </div>
 </x-layout>
