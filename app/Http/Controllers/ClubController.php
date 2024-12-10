@@ -70,9 +70,9 @@ class ClubController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Club $club)
     {
-        $club = Club::findOrFail($id);
+        // $club = Club::findOrFail($id);
         return view('clubs.edit', ['title' => 'Update Club', 'club' => $club] );
     }
 

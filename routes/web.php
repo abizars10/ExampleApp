@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function (){
     Route::get('club', [ClubController::class, 'index'])->name('club.index');
     Route::get('/clubs/create', [ClubController::class, 'create'])->name('club.create');
     Route::post('/clubs/create', [ClubController::class, 'store'])->name('club.store');
-    Route::get('/clubs/edit{id}', [ClubController::class, 'edit'])->name('club.edit');
+    Route::get('/clubs/edit{club:slug}', [ClubController::class, 'edit'])->name('club.edit');
     Route::put('/clubs/update{id}', [ClubController::class, 'update'])->name('club.update');
     Route::delete('/clubs/delete{id}', [ClubController::class, 'destroy'])->name('club.destroy');
 });

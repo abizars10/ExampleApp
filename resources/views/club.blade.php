@@ -22,7 +22,7 @@
                         <td class="px-2 border border-slate-700">{{ $club->stadium }}</td>
                         <td class="flex justify-center gap-2 px-1 border border-slate-700">
                             <a href="team" class="text-green-700"><i class='bx bx-show'></i></a>
-                            <a href="{{ route('club.edit', $club->id) }}" class="text-blue-700"><i class='bx bxs-pencil'></i></i></a>
+                            <a href="{{ route('club.edit', $club->slug) }}" class="text-blue-700"><i class='bx bxs-pencil'></i></i></a>
                             <form action="{{ route('club.destroy', $club->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
