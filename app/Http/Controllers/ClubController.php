@@ -71,7 +71,8 @@ class ClubController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $club = Club::findOrFail($id);
+        return view('clubs.edit', ['title' => 'Update Club', 'club' => $club] );
     }
 
     /**
@@ -79,7 +80,19 @@ class ClubController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:45',
+            'city' => 'required|max:45',
+            'stadium' => 'required|max:45',
+        ]);
+
+        DB::table('clubs')->where('id', $id)->update([
+            'name' => $request->name,
+            'city' => $request->city,
+            'stadium' => $request->stadium,
+        ]);
+
+        return redirect()->route('club.index');
     }
 
     /**
