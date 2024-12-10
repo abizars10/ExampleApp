@@ -1,4 +1,4 @@
-    <nav x-data="{ isOpen: false }" class="bg-gray-800">
+    <nav x-data="{ isOpen: false }" class="bg-teal-900">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -11,7 +11,7 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <x-navlink href='/dashboard' :active="request()->is('dashboard')">Dashboard</x-navlink>
                             <x-navlink href='/team' :active="request()->is('team')">Team</x-navlink>
-                            <x-navlink href='/club' :active="request()->is('club')">Clubs</x-navlink>
+                            <x-navlink href='/clubs/index' :active="request()->is('clubs/index')">Clubs</x-navlink>
                         </div>
                     </div>
                 </div>

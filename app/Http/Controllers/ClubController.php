@@ -15,7 +15,7 @@ class ClubController extends Controller
     public function index()
     {
         $clubs = Club::paginate(10);
-        return view('club', ['title' => 'Clubs', 'clubs' => $clubs]);
+        return view('clubs.index', ['title' => 'Clubs', 'clubs' => $clubs]);
     }
 
     /**
