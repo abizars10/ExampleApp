@@ -12,6 +12,7 @@
                             <x-navlink href='/dashboard' :active="request()->is('dashboard')">Dashboard</x-navlink>
                             <x-navlink href='/team' :active="request()->is('team')">Team</x-navlink>
                             <x-navlink href='/clubs/index' :active="request()->is('clubs/index')">Clubs</x-navlink>
+                            <x-navlink href='/players' :active="request()->is('players')">Players</x-navlink>
                         </div>
                     </div>
                 </div>
@@ -99,7 +100,8 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-navlink href='/dashboard' :active="request()->is('dashboard')">Dashboard</x-navlink>
                 <x-navlink href='/team' :active="request()->is('team')">Team</x-navlink>
-                <x-navlink href='/club' :active="request()->is('club')">Clubs</x-navlink>
+                <x-navlink href='/clubs/index' :active="request()->is('clubs/index')">Clubs</x-navlink>
+                <x-navlink href='/players' :active="request()->is('players')">Players</x-navlink>
             </div>
             <div class="pt-4 pb-3 border-t border-gray-700">
                 <div class="flex items-center px-5">

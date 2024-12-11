@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\PlayerController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::post('/logut', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function (){
     Route::get('dashboard', function(){return view('dashboard', ['title' => 'Dashboard']);})->name('dashboard');
     Route::get('team', function(){return view('team', ['title' => 'Team']);})->name('team');
+
     // Clubs
     Route::get('/clubs/index', [ClubController::class, 'index'])->name('club.index');
     Route::get('/clubs/create', [ClubController::class, 'create'])->name('club.create');
@@ -34,4 +36,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/clubs/edit{club:slug}', [ClubController::class, 'edit'])->name('club.edit');
     Route::put('/clubs/update{id}', [ClubController::class, 'update'])->name('club.update');
     Route::delete('/clubs/delete{id}', [ClubController::class, 'destroy'])->name('club.destroy');
+
+    // Players
+    Route::resource('players', PlayerController::class);
 });

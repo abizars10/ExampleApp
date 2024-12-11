@@ -32,9 +32,9 @@ class ClubController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:20',
-            'city' => 'required|max:20',
-            'stadium' => 'required|max:20',
+            'name' => 'required|max:255',
+            'city' => 'required|max:255',
+            'stadium' => 'required|max:255',
         ],[
             'name.required' => 'Nama wajib diisi',
             'name.max' => 'Nama maksimal 20 karakter',
@@ -82,9 +82,9 @@ class ClubController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|max:45',
-            'city' => 'required|max:45',
-            'stadium' => 'required|max:45',
+            'name' => 'required|max:255',
+            'city' => 'required|max:255',
+            'stadium' => 'required|max:255',
         ]);
 
         DB::table('clubs')->where('id', $id)->update([
