@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ClubResource;
 use id;
 use App\Models\Club;
 use Illuminate\Http\Request;

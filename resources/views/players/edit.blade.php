@@ -3,7 +3,6 @@
     <x-header>{{ $title }}</x-header>
     <div class="max-w-4xl px-4 py-6 mx-auto bg-white rounded shadow-md lg:mt-10 sm:px-6 lg:px-8">
         <h2 class="mb-4 text-lg font-semibold text-gray-700">Edit Player</h2>
-
         <form action="{{ route('players.update', $player->id) }}" method="POST">
             @csrf
             @method('PUT')

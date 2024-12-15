@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('age');
-            $table->string('position');
-            $table->string('national');
-            $table->string('salary');
+            $table->foreignId('club_id')->constrained(table: 'clubs', indexName: 'teams_club_id');
+            $table->foreignId('player_id')->constrained(table: 'players', indexName: 'teams_player_id');
             $table->timestamps();
         });
     }

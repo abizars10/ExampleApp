@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TeamController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 Route::get('/', function () {
@@ -39,4 +40,11 @@ Route::middleware('auth')->group(function (){
 
     // Players
     Route::resource('players', PlayerController::class);
+
+    // Teams
+    // route::get('/teams/index', [TeamController::class, 'index'])->name('team.index');
+
+Route::get('/team', [TeamController::class, 'index'])->name('teams.index');
+Route::post('/teams/store', [TeamController::class, 'store'])->name('teams.store');
+
 });

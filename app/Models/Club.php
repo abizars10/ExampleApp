@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Club extends Model
 {
@@ -36,5 +38,10 @@ class Club extends Model
             // terapkan slug yang unik ke model
             $club->slug = $slug;
         });
+    }
+
+    public function team(): HasOne
+    {
+        return $this->hasOne(Team::class);
     }
 }
