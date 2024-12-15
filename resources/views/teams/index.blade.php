@@ -31,6 +31,19 @@
                 </select>
             </div>
 
+            
             <button type="submit">Save Team</button>
         </form>
+        <div>
+            @foreach ($teams as $team)
+                <tr>
+                    <td>{{ $team->club->name }}</td>
+                    <td>{{ $team->club->city }}</td>
+                    <td>{{ $team->club->stadium }}</td>
+                    <td>{{ $team->player->name }}</td>
+                    <td>{{ $team->player->position }}</td>
+                    <td>{{ $team->player->national }}</td>
+                </tr>
+            @endforeach
+        </div>
 </x-layout>

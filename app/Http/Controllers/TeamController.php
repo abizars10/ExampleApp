@@ -14,10 +14,10 @@ class TeamController extends Controller
      */
     public function index()
     {
-        // $teams = Team::all();
+        $teams = Team::all();
         $clubs = Club::all();
         $players = Player::all();
-        return view('teams.index', ['title' => 'Teams', 'clubs' => $clubs, 'players' => $players]);
+        return view('teams.index', ['title' => 'Teams', 'clubs' => $clubs, 'players' => $players, 'teams' => $teams]);
     }
 
     /**

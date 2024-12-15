@@ -42,4 +42,8 @@ class Team extends Model
     {
         return $this->belongsTo(Club::class);
     }
+    public function player(): BelongsTo
+    {
+        return $this->belongsTo(Player::class);
+    }
 }
