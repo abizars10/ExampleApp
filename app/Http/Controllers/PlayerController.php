@@ -35,7 +35,7 @@ class PlayerController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:25',
             'position' => 'required|string|max:255',
             'national' => 'required|string|max:255',
         ]);
@@ -73,7 +73,7 @@ class PlayerController extends Controller
     public function update(Request $request, Player $player)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:25',
             'position' => 'required|string|max:255',
             'national' => 'required|string|max:255',
         ]);

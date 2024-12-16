@@ -36,13 +36,6 @@ class ClubController extends Controller
             'name' => 'required|max:255',
             'city' => 'required|max:255',
             'stadium' => 'required|max:255',
-        ],[
-            'name.required' => 'Nama wajib diisi',
-            'name.max' => 'Nama maksimal 20 karakter',
-            'city.required' => 'Kota wajib diisi',
-            'city.max' => 'Kota maksimal 20 karakter',
-            'stadium.required' => 'Stadion wajib diisi',
-            'stadium.max' => 'Stadion maksimal 20 karakter',
         ]);
 
         // DB::table('clubs')->insert([

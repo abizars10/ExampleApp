@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laravel App</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
     @vite('resources/css/app.css')
     {{-- font style --}}
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -17,9 +22,9 @@
 </head>
 
 <body class="h-full">
-  <main>
-    {{ $slot }}
-  </main>
+    <main>
+        {{ $slot }}
+    </main>
 </body>
 
 </html>
