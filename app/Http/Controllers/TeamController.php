@@ -14,7 +14,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::all();
+        $teams = Team::with(['club', 'player'])->get();
         $clubs = Club::all();
         $players = Player::all();
         return view('teams.index', ['title' => 'Teams', 'clubs' => $clubs, 'players' => $players, 'teams' => $teams]);
